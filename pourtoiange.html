@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour toi Ange ❤️</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Segoe UI', serif;
+    background: linear-gradient(160deg, #2b0a1e, #5a0f3a 50%, #2b0a1e);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Je t'aime Ange qui montent */
+  #fond { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .flottant {
+    position: absolute;
+    bottom: -40px;
+    color: rgba(255, 140, 180, 0.8);
+    font-style: italic;
+    white-space: nowrap;
+    animation: monter linear forwards;
+  }
+  @keyframes monter {
+    to { transform: translateY(-115vh) rotate(8deg); opacity: 0; }
+  }
+
+  section { position: relative; z-index: 1; padding: 70px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+  h2 { font-size: 2rem; margin-bottom: 25px; color: #ff8fb8; }
+
+  /* Menu */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    padding: 12px; background: rgba(43, 10, 30, 0.85); backdrop-filter: blur(6px);
+  }
+  nav a { color: #ffc2d8; text-decoration: none; font-size: 0.95rem; }
+  nav a:hover { color: #fff; }
+
+  /* Accueil */
+  #accueil { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .coeur {
+    width: 160px; height: 160px; position: relative;
+    animation: battre 1.2s infinite; margin: 20px 0 40px;
+    filter: drop-shadow(0 0 25px #ff2d75);
+  }
+  .coeur::before, .coeur::after {
+    content: ""; position: absolute; top: 0; left: 80px;
+    width: 80px; height: 128px; background: #ff2d75;
+    border-radius: 80px 80px 0 0; transform: rotate(-45deg); transform-origin: 0 100%;
+  }
+  .coeur::after { left: 0; transform: rotate(45deg); transform-origin: 100% 100%; }
+  @keyframes battre {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+  }
+  #accueil h1 { font-size: 2.4rem; margin-bottom: 10px; }
+  #accueil p { font-size: 1.2rem; color: #ffc2d8; }
+  .fleche { margin-top: 30px; font-size: 2rem; animation: rebond 1.5s infinite; }
+  @keyframes rebond { 50% { transform: translateY(10px); } }
+
+  /* Galerie photos */
+  .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+  .grille img {
+    width: 100%; height: 220px; object-fit: cover; border-radius: 14px;
+    border: 3px solid #ff8fb8; cursor: pointer; transition: transform .3s;
+    background: #4a1530;
+  }
+  .grille img:hover { transform: scale(1.05) rotate(-1deg); }
+
+  /* Vidéos */
+  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  video { width: 100%; border-radius: 14px; border: 3px solid #ff8fb8; background: #000; }
+
+  /* Merci */
+  .carte {
+    background: rgba(255, 255, 255, 0.08); border: 2px solid #ff8fb8;
+    border-radius: 20px; padding: 35px 25px; line-height: 1.8; font-size: 1.15rem;
+  }
+  .carte .gros { font-size: 1.8rem; color: #ff8fb8; margin-bottom: 15px; }
+  .compteur { font-size: 3rem; color: #ff2d75; margin: 10px 0; }
+
+  /* Photo agrandie */
+  #zoom {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center;
+  }
+  #zoom img { max-width: 92%; max-height: 90%; border-radius: 12px; }
+
+  footer { position: relative; z-index: 1; text-align: center; padding: 40px 20px 60px; color: #ffc2d8; }
+</style>
+</head>
+<body>
+
+<div id="fond"></div>
+
+<nav>
+  <a href="#accueil">❤️ Accueil</a>
+  <a href="#photos">📸 Photos</a>
+  <a href="#videos">🎬 Vidéos</a>
+  <a href="#merci">💌 Merci</a>
+</nav>
+
+<section id="accueil">
+  <div class="coeur"></div>
+  <h1>Adjé Ange, je t'aime ❤️</h1>
+  <p>Ce petit site est rien que pour toi, Ange…</p>
+  <div class="fleche">⌄</div>
+</section>
+
+<section id="photos">
+  <h2>📸 La femme la plus belle du monde</h2>
+  <div class="grille">
+    <img src="images/image.png" alt="Photo 1">
+    <img src="images/WhatsApp Image 2026-11-25 at 21.43.47.jpeg" alt="Photo 2">
+    <img src="images/WhatsApp Image 2026-11-25 at 21.43.52.jpeg" alt="Photo 3">
+  </div>
+</section>
+
+<section id="videos">
+  <h2>🎬 La meilleure</h2>
+  <div class="videos">
+    <video src="vidéos/ange vidéos 1.mp4" controls playsinline></video>
+    <video src="vidéos/WhatsApp Video 2026-11-25 at 21.44.04.mp4" controls playsinline></video>
+    <VIdeo src="vidéos/WhatsApp Video 2026-11-25 at 21.46.09.mp4" controls playsinline></VIdeo>
+    <VIdeo src="vidéos/WhatsApp Video 2026-11-25 at 21.46.10.mp4" controls playsinline></VIdeo>
+  </div>
+</section>
+
+<section id="merci">
+  <h2>💌 Merci</h2>
+  <div class="carte">
+    <div class="gros">Merci pour ces 11 mois, Ange ❤️</div>
+    <div class="compteur" id="compteur">11 mois</div>
+    <p>
+      Merci d'être dans ma vie, pour ton sourire, ta patience et tout l'amour que tu me donnes.<br>
+      Ça va bientôt faire un an qu'on est ensemble, et je ne regrette aucun instant.<br>
+      Chaque jour avec toi est une bénédiction. Je t'aime Ange, mon amour. 💖
+    </p>
+  </div>
+</section>
+
+<footer>Fait avec tout mon amour, rien que pour toi Ange ❤️</footer>
+
+<div id="zoom"><img id="zoomImg" src="" alt=""></div>
+
+<script>
+  // Je t'aime Ange + cœurs qui montent
+  const mots = [
+    "Je t'aime Ange", "Je t'aime Ange ❤️", "❤️", "Je t'aime Adjé Ange",
+    "💖", "Je t'aime Ange 💕", "💕", "Je t'aime Ange à l'infini", "💗", "Je t'aime Ange"
+  ];
+  const fond = document.getElementById("fond");
+
+  function creerFlottant() {
+    const el = document.createElement("div");
+    el.className = "flottant";
+    el.textContent = mots[Math.floor(Math.random() * mots.length)];
+    el.style.left = Math.random() * 80 + "vw";
+    el.style.fontSize = (14 + Math.random() * 22) + "px";
+    const duree = 6 + Math.random() * 8;
+    el.style.animationDuration = duree + "s";
+    fond.appendChild(el);
+    setTimeout(() => el.remove(), duree * 1000);
+  }
+  setInterval(creerFlottant, 350);
+  for (let i = 0; i < 14; i++) setTimeout(creerFlottant, i * 150);
+
+  // Photo en grand au clic
+  const zoom = document.getElementById("zoom");
+  const zoomImg = document.getElementById("zoomImg");
+  document.querySelectorAll(".grille img").forEach(img => {
+    img.addEventListener("click", e => {
+      e.stopPropagation();
+      zoomImg.src = img.src;
+      zoom.style.display = "flex";
+    });
+  });
+  zoom.addEventListener("click", () => zoom.style.display = "none");
+
+  // Cœurs au clic / toucher
+  document.addEventListener("click", e => {
+    const c = document.createElement("div");
+    c.className = "flottant";
+    c.textContent = "❤️";
+    c.style.left = e.clientX + "px";
+    c.style.top = e.clientY + "px";
+    c.style.bottom = "auto";
+    c.style.fontSize = "28px";
+    c.style.position = "fixed";
+    c.style.zIndex = 50;
+    c.style.animationDuration = "3s";
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  });
+</script>
+
+</body>
+</html>
